@@ -29,11 +29,11 @@
   ![S3](https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white)
 
 ### 역할 분담
-**김도연** : 백엔드, 배포
+**김도연** : 백엔드, 프론트, 배포
 
 **강용제** : 프론트엔드, 기획
 
 ### 기간
-2024.09 - 11일
-
+2024.9월  [11일]
+김도연 개인으로 추가작업 4일
 
