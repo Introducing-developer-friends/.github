@@ -120,6 +120,91 @@ Devlntro_front/
 - `package.json`: 프로젝트 의존성 및 스크립트 정의
 </details>
 
+<details>
+<summary>백엔드</summary>
+  
+```bash
+Devlntro_api/
+│
+├── src/
+│   ├── auth/
+│   │   ├── auth.controller.ts
+│   │   ├── auth.module.ts
+│   │   ├── auth.service.ts
+│   │   └── jwt.strategy.ts
+│   │
+│   ├── users/
+│   │   ├── users.controller.ts
+│   │   ├── users.module.ts
+│   │   ├── users.service.ts
+│   │   └── dto/
+│   │       ├── create-user.dto.ts
+│   │       ├── update-user.dto.ts
+│   │       └── user-login.dto.ts
+│   │
+│   ├── posts/
+│   │   ├── posts.controller.ts
+│   │   ├── posts.module.ts
+│   │   ├── posts.service.ts
+│   │   └── dto/
+│   │       ├── create-post.dto.ts
+│   │       └── update-post.dto.ts
+│   │
+│   ├── comments/
+│   │   ├── comments.controller.ts
+│   │   ├── comments.module.ts
+│   │   ├── comments.service.ts
+│   │   └── dto/
+│   │       ├── create-comment.dto.ts
+│   │       └── update-comment.dto.ts
+│   │
+│   ├── contacts/
+│   │   ├── contacts.controller.ts
+│   │   ├── contacts.module.ts
+│   │   ├── contacts.service.ts
+│   │   └── dto/
+│   │       ├── create-contact.dto.ts
+│   │       └── update-contact.dto.ts
+│   │
+│   ├── database/
+│   │   └── database.module.ts
+│   │
+│   ├── common/
+│   │   ├── filters/
+│   │   │   └── http-exception.filter.ts
+│   │   └── pipes/
+│   │       └── validation.pipe.ts
+│   │
+│   ├── config/
+│   │   └── config.service.ts
+│   │
+│   └── main.ts
+│
+├── .env
+├── .eslintrc.js
+├── .gitignore
+├── Dockerfile
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+- `src`: 메인 소스 코드 디렉토리
+- `auth`: 인증 관련 모듈, 컨트롤러, 서비스
+- `users`: 사용자 관리 관련 모듈, 컨트롤러, 서비스, DTO
+- `posts`: 게시물 관리 관련 모듈, 컨트롤러, 서비스, DTO
+- `comments`: 댓글 관리 관련 모듈, 컨트롤러, 서비스, DTO
+- `contacts`: 인맥 관리 관련 모듈, 컨트롤러, 서비스, DTO
+- `database`: 데이터베이스 연결 설정 모듈
+- `common`: 공통으로 사용되는 필터, 파이프라인 등
+- `config`: 환경 설정 관련 파일
+- `main.ts`: 백엔드 애플리케이션의 진입점
+- `.env`: 환경 변수 파일
+- `Dockerfile`: Docker 설정 파일
+- `package.json`: 프로젝트 의존성 및 스크립트 정의
+- `tsconfig.json`: TypeScript 설정 파일
+
+</details>
+
 ### ERD 설계도
 ![ERD 설계도](./images/erd_diagram.png)
 
