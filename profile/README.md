@@ -45,7 +45,7 @@
 - **TypeORM**: `^0.3.20`
 
 ### ERD 설계도
-![ERD 설계도](./profile/erd_diagram.png)
+![ERD 설계도](./images/erd_diagram.png)
 
 ### API 명세서
 <details>
