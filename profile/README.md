@@ -49,6 +49,77 @@
 - **MySQL**: `v8.0.39`
 - **TypeORM**: `v0.3.20`
 
+### 프로젝트 구조
+<details>
+<summary>프론트</summary>
+  
+```bash
+Devlntro_front/
+│
+├── public/
+│   └── vite.svg
+│
+├── src/
+│   ├── api/
+│   │   └── axiosInstance.ts
+│   │
+│   ├── assets/
+│   │   └── react.svg
+│   │
+│   ├── components/
+│   │   ├── CreatePostModal.tsx
+│   │   ├── FeedDetail.tsx
+│   │   ├── NavBar.tsx
+│   │   └── ProtectedRoute.tsx
+│   │
+│   ├── contexts/
+│   │   └── AuthContext.tsx
+│   │
+│   ├── pages/
+│   │   ├── CreatePostPage.tsx
+│   │   ├── FeedPage.tsx
+│   │   ├── FriendsFeedPage.tsx
+│   │   ├── FriendsPage.tsx
+│   │   ├── LoginPage.tsx
+│   │   ├── MyPage.tsx
+│   │   └── SignUpPage.tsx
+│   │
+│   ├── redux/
+│   │   ├── store.ts
+│   │   └── userSlice.ts
+│   │
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+│
+├── .env.development
+├── .env.production
+├── .eslintrc.cjs
+├── .gitignore
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
+
+- `public/`: 정적 파일을 포함하는 디렉토리
+- `src/`: 소스 코드를 포함하는 메인 디렉토리
+  - `api/`: API 관련 설정 및 인스턴스
+  - `assets/`: 이미지 등의 정적 자원
+  - `components/`: 재사용 가능한 React 컴포넌트
+  - `contexts/`: React Context API를 사용한 상태 관리
+  - `pages/`: 각 페이지를 나타내는 컴포넌트
+  - `redux/`: Redux 관련 파일 (스토어 설정, 슬라이스 등)
+- `.env.development` 및 `.env.production`: 개발 및 프로덕션 환경 변수 설정
+- `vite.config.ts`: Vite 설정 파일
+- `package.json`: 프로젝트 의존성 및 스크립트 정의
+</details>
+
 ### ERD 설계도
 ![ERD 설계도](./images/erd_diagram.png)
 
