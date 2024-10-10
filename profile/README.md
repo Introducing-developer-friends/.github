@@ -1,6 +1,6 @@
 # 비즈니스 인맥을 위한 sns 프로젝트
 
-### 🎯기획 의도
+## 🎯기획 의도
 명함을 주고받은 이후에 비즈니스 목적이 없으면 연락을 하지 않게 됩니다.
 비즈니스 외에도 연결고리를 만들 수 있다면 비즈니스 목적 없는 좋은 만남을 만들어나갈 수 있다고 생각하여
 본 서비스를 기획하였습니다.
@@ -104,7 +104,7 @@ graph TD
     class S,T,U infra;
     class V,W,X cicd;
 ```
-### 💻기술 스택
+## 💻기술 스택
 - **프론트엔드**:  
   ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
   ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
@@ -231,10 +231,10 @@ graph TD
   - AWS 서비스 구성 (EC2, S3) 및 Docker 활용
   - GitHub Actions를 통한 백엔드 CI/CD 구축
 
-### 📅개발 기간
+## 📅개발 기간
 - **2024년 9월 15일 ~ 10월 8일 (24일)**
 
-### ℹ️ 사용 버전
+## ℹ️ 사용 버전
 - **React**: `v18.3.1`
 - **React-Router-DOM**: `v6.26.2`
 - **Redux Toolkit**: `v2.2.7`
@@ -245,7 +245,7 @@ graph TD
 - **MySQL**: `v8.0.39`
 - **TypeORM**: `v0.3.20`
 
-### 🗂️프로젝트 구조
+## 🗂️프로젝트 구조
 <details>
 <summary>프론트엔드</summary>
   
@@ -457,13 +457,13 @@ Devlntro_api/
 
 </details>
 
-### 📚Swagger UI
+## 📚Swagger UI
 ![Swagger UI](./images/SwaggerUI.png)
 
-### 🗄️ERD 설계도
+## 🗄️ERD 설계도
 ![ERD 설계도](./images/erd_diagram.png)
 
-### 📋API 명세서
+## 📋API 명세서
 <details>
 <summary>API 명세서 펼치기/접기</summary>
 
