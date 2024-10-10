@@ -55,20 +55,19 @@
 ```bash
 Devlntro_front/
 │
-├── public/
-│   └── vite.svg
 │
 ├── src/
 │   ├── api/
-│   │   └── axiosInstance.ts
+│   │   ├── axiosInstance.ts
+│   │   └── useAuthRedirect.ts
 │   │
 │   ├── assets/
 │   │   └── react.svg
 │   │
 │   ├── components/
-│   │   ├── CreatePostModal.tsx
 │   │   ├── FeedDetail.tsx
 │   │   ├── NavBar.tsx
+│   │   ├── PasswordChange.tsx
 │   │   └── ProtectedRoute.tsx
 │   │
 │   ├── contexts/
@@ -85,7 +84,8 @@ Devlntro_front/
 │   │
 │   ├── redux/
 │   │   ├── store.ts
-│   │   └── userSlice.ts
+│   │   ├── userSlice.ts
+│   │   └── notificationSlice.ts
 │   │
 │   ├── App.css
 │   ├── App.tsx
@@ -103,10 +103,9 @@ Devlntro_front/
 ├── tsconfig.json
 ├── tsconfig.node.json
 └── vite.config.ts
+
 ```
 
-
-- `public/`: 정적 파일을 포함하는 디렉토리
 - `src/`: 소스 코드를 포함하는 메인 디렉토리
   - `api/`: API 관련 설정 및 인스턴스
   - `assets/`: 이미지 등의 정적 자원
