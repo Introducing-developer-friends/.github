@@ -1504,7 +1504,7 @@ Devlntro_api/
       "message": "알림이 성공적으로 삭제되었습니다."
     }
     ```
-    
+
     - **실패** (404 Not Found):
     
     ```json
@@ -1512,6 +1512,15 @@ Devlntro_api/
       "statusCode": 404,
       "message": "해당 알림을 찾을 수 없습니다.",
       "error": "Not Found"
+    }
+    ```
+    - **실패** (400 Bad Request):
+
+    ```json
+    {
+      "statusCode": 400,
+      "message": "알림 삭제 중 오류가 발생했습니다.",
+      "error": "Bad Request"
     }
     ```
 
@@ -1548,6 +1557,15 @@ Devlntro_api/
       "statusCode": 400,
       "message": "알림 삭제 요청 중 오류가 발생했습니다.",
       "error": "Bad Request"
+    }
+    ```
+    - **실패** (404 Not Found):
+
+    ```json
+    {
+      "statusCode": 404,
+      "message": "삭제할 알림을 찾을 수 없습니다.",
+      "error": "Not Found"
     }
     ```
 
