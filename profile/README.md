@@ -1,4 +1,4 @@
-# 비즈니스 인맥을 위한 sns 프로젝트
+#  SNS
 
 ## 🎯기획 의도
 명함을 주고받은 이후에 비즈니스 목적이 없으면 연락을 하지 않게 됩니다.
@@ -24,86 +24,7 @@
 5. **유저 정보 수정**  
    - 유저는 자신의 비즈니스 프로필 및 계정 정보를 수정할 수 있으며, 비밀번호 변경 기능을 제공합니다.
 ## 프로젝트 아키텍처
-
-```mermaid
-graph TD
-    subgraph "클라이언트"
-        A[사용자 브라우저]
-    end
-
-    subgraph "프론트엔드 (React)"
-        B[React 앱]
-        C[Redux]
-        D[React Router]
-        E[Axios]
-    end
-
-    subgraph "백엔드 (NestJS)"
-        G[NestJS 앱]
-        H[Auth 모듈]
-        I[Users 모듈]
-        J[Posts 모듈]
-        K[Comments 모듈]
-        L[Likes 모듈]
-        M[S3 모듈]
-        N[TypeORM]
-        O[JWT]
-    end
-
-    subgraph "데이터베이스"
-        Q[(MySQL)]
-    end
-
-    subgraph "스토리지"
-        R[AWS S3]
-    end
-
-    subgraph "인프라"
-        S[프론트엔드: AWS S3]
-        T[백엔드: AWS EC2]
-        U[Docker 컨테이너]
-    end
-
-    subgraph "CI/CD (백엔드)"
-        V[GitHub]
-        W[GitHub Actions]
-        X[Docker Hub]
-    end
-
-    A --> S
-    S --> B
-    B --> C
-    B --> D
-    B --> E
-    E -->|API 요청| T
-    T --> G
-    G --> H & I & J & K & L & M
-    H & I & J & K & L & M --> N
-    H --> O
-    N -->|쿼리| Q
-    M -->|이미지 업로드/다운로드| R
-    V -->|코드 푸시| W
-    W -->|도커 이미지 빌드 & 푸시| X
-    X -.->|이미지 풀| T
-    T --> U
-    U --> G
-
-    classDef client fill:#F9F9F9,stroke:#333,stroke-width:2px;
-    classDef frontend fill:#61DAFB,stroke:#61DAFB,stroke-width:2px,color:#000;
-    classDef backend fill:#E0234E,stroke:#E0234E,stroke-width:2px,color:#fff;
-    classDef database fill:#00758F,stroke:#00758F,stroke-width:2px,color:#fff;
-    classDef storage fill:#FF9900,stroke:#FF9900,stroke-width:2px,color:#000;
-    classDef infra fill:#4CAF50,stroke:#4CAF50,stroke-width:2px,color:#fff;
-    classDef cicd fill:#24292E,stroke:#24292E,stroke-width:2px,color:#fff;
-
-    class A client;
-    class B,C,D,E frontend;
-    class G,H,I,J,K,L,M,N,O backend;
-    class Q database;
-    class R storage;
-    class S,T,U infra;
-    class V,W,X cicd;
-```
+수정중
 ## 💻기술 스택
 - **프론트엔드**:  
   ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
