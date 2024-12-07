@@ -112,16 +112,15 @@ graph TD
   ![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
 
 - **백엔드**:  
-  ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
-  ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-  ![TypeORM](https://img.shields.io/badge/TypeORM-FF5733?style=for-the-badge&logo=typeorm&logoColor=white)
-  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-  ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-  ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
-
-- **배포**:  
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![TypeORM](https://img.shields.io/badge/TypeORM-FF5733?style=for-the-badge&logo=typeorm&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
 ![EC2](https://img.shields.io/badge/Amazon%20EC2-FF9900?style=for-the-badge&logo=amazon-ec2&logoColor=white)
 ![S3](https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white)
+
 
 ## 🛠️개발 과정
 <details>
@@ -211,28 +210,14 @@ graph TD
 
 ### 강용제
 - 프로젝트 기획 및 와이어프레임 설계
-- 프론트엔드 초기 개발 (React)
-  - MVP 기반의 기본 기능 및 페이지 구현
-  - UI/UX 디자인 및 기본 컴포넌트 개발
-  - API 호출 로직 및 인증 기능 구현
+- 프론트엔드 개발 (React)
 
 ### 김도연
-- 백엔드 개발 (NestJS)
-  - 전체 백엔드 아키텍처 설계 및 RESTful API 구현
-  - 데이터베이스 설계 및 ORM 활용 (MySQL, TypeORM)
-  - 인증/보안 로직, 파일 업로드, 성능 최적화
-
-- 프론트엔드 개발 및 개선 (React)
-  - 알림 기능 및 Redux 상태 관리 구현
-  - 보안 로직 강화 및 추가 기능 구현 (인맥 등)
-  - UX/UI 개선 및 버그 수정
-
-- 배포 및 인프라 관리
-  - AWS 서비스 구성 (EC2, S3) 및 Docker 활용
-  - GitHub Actions를 통한 백엔드 CI/CD 구축
+- 백엔드 개발 (NestJS, MySQL, TypeORM)
+- 인프라(AWS, Docker, Nginx, CloudFront)
 
 ## 📅개발 기간
-- **2024년 9월 15일 ~ 10월 8일 (24일)**
+- **2024년 9월 15일 ~ 11월 15일 (56일)**
 
 ## ℹ️ 사용 버전
 - **React**: `v18.3.1`
@@ -317,42 +302,62 @@ Devlntro_front/
 
 <details>
 <summary>백엔드</summary>
+
+
   
 ```bash
-Devlntro_api/
+dev-intro_api/
 │
+├── .github/
+├── coverage/
+├── dist/
+├── node_modules/
+├── profile/
 ├── src/
 │   ├── auth/
+│   │   ├── dto/
+│   │   │   ├── auth-login.dto.ts
+│   │   │   ├── auth-register.dto.ts
+│   │   │   ├── auth-refresh-token.dto.ts
+│   │   ├── auth.controller.spec.ts
 │   │   ├── auth.controller.ts
 │   │   ├── auth.module.ts
-│   │   ├── auth.service.ts
-│   │   ├── auth.controller.spec.ts
 │   │   ├── auth.service.spec.ts
+│   │   ├── auth.service.ts
+│   │   ├── jwt-auth.guard.spec.ts
 │   │   ├── jwt-auth.guard.ts
-│   │   ├── jwt.strategy.ts
-│   │   └── dto/
-│   │       ├── comment.dto.ts
+│   │   ├── jwt.strategy.spec.ts
+│   │   └── jwt.strategy.ts
 │   │
 │   ├── comment/
+│   │   ├── dto/
+│   │   │   ├── comment.dto.ts
+│   │   ├── comment.controller.spec.ts
 │   │   ├── comment.controller.ts
 │   │   ├── comment.module.ts
-│   │   ├── comment.service.ts
-│   │   └── dto/
-│   │       ├── comment.dto.ts
+│   │   ├── comment.service.spec.ts
+│   │   └── comment.service.ts
 │   │
 │   ├── common/
+│   │   ├── filters/
+│   │   │   └── http-exception.filter.ts
+│   │   ├── interceptors/
+│   │   ├── utils/
+│   │       ├── utils.helper.ts
+│   │       └── validation.helper.ts
+│   │
 │   ├── contacts/
+│   │   ├── dto/
+│   │   │   ├── create-contact.dto.ts
+│   │   ├── contacts.controller.spec.ts
 │   │   ├── contacts.controller.ts
 │   │   ├── contacts.module.ts
-│   │   ├── contacts.service.ts
-│   │   └── dto/
-│   │       ├── create-contact.dto.ts
+│   │   ├── contacts.service.spec.ts
+│   │   └── contacts.service.ts
 │   │
 │   ├── controllers/
 │   │   └── sample.controller.ts
 │   ├── dto/
-│   │   ├── feed-query.dto.ts
-│   │   ├── sample.dto.ts
 │   ├── entities/
 │   │   ├── business-contact.entity.ts
 │   │   ├── business-profile.entity.ts
@@ -362,45 +367,59 @@ Devlntro_api/
 │   │   ├── notification.entity.ts
 │   │   ├── post-like.entity.ts
 │   │   ├── post.entity.ts
+│   │   ├── refresh-token.entity.ts
 │   │   └── user-account.entity.ts
+│   │
 │   ├── feed/
+│   │   ├── dto/
+│   │   ├── feed.controller.spec.ts
 │   │   ├── feed.controller.ts
 │   │   ├── feed.module.ts
-│   │   ├── feed.service.ts
+│   │   ├── feed.service.spec.ts
+│   │   └── feed.service.ts
+│   │
 │   ├── migrations/
-│   │   ├── 1726495772853-InitialMigration.ts
-│   │   ├── 1726674158617-RenameLikes.ts
-│   │   ├── 1726743763543-AddDeletedAtToPost.ts
-│   │   ├── 1726757374843-AddDeletedAtToUser.ts
-│   │   ├── 1726844599137-AddConfirmPassword.ts
-│   │   ├── 1727088144419-CreateFriendRequest.ts
-│   │   ├── 1727102625007-AddDeleteAtToNotification.ts
-│   │   ├── 1727185582581-UpdateRemainingTokens.ts
-│   │   ├── 1727956898358-CreateNotificationEntity.ts
-│   │   ├── 1727963072309-AddPostIdAndUserIdToPost.ts
-│   │   └── 1728369960382-AddDeletedAtToPostLike.ts
+│   │   ├── 001-InitialMigration.ts
+│   │   ├── 002-CreateFriendRequestTable.ts
+│   │   ├── 003-CreateNotificationTable.ts
+│   │   └── 004-CreateRefreshTokenTable.ts
+│   │
 │   ├── notification/
+│   │   ├── dto/
+│   │   ├── notifications.controller.spec.ts
 │   │   ├── notifications.controller.ts
 │   │   ├── notifications.module.ts
-│   │   ├── notifications.service.ts
+│   │   ├── notifications.service.spec.ts
+│   │   └── notifications.service.ts
+│   │
 │   ├── post/
+│   │   ├── dto/
+│   │   │   ├── create-post.dto.ts
+│   │   │   ├── update-post.dto.ts
+│   │   │   └── like-post.dto.ts
+│   │   ├── post.controller.spec.ts
 │   │   ├── post.controller.ts
 │   │   ├── post.module.ts
-│   │   ├── post.service.ts
-│   │   └── dto/
-│   │       ├── post.dto.ts
+│   │   ├── post.service.spec.ts
+│   │   └── post.service.ts
+│   │
 │   ├── s3/
-│   │   └── s3.module.ts
+│   │   ├── s3.module.ts
+│   │   ├── s3.service.spec.ts
+│   │   └── s3.service.ts
+│   │
 │   ├── seeds/
 │   │   └── initial-data.seed.ts
-│   ├── services/
-│   │   ├── feed-filter.service.ts
-│   │   ├── sorting-service.ts
+│   │
 │   ├── user/
 │   │   ├── dto/
+│   │   │   ├── create-user.dto.ts
+│   │   ├── user.controller.spec.ts
 │   │   ├── user.controller.ts
 │   │   ├── user.module.ts
-│   │   ├── user.service.ts
+│   │   ├── user.service.spec.ts
+│   │   └── user.service.ts
+│   │
 │   ├── app.controller.spec.ts
 │   ├── app.controller.ts
 │   ├── app.module.ts
@@ -418,52 +437,22 @@ Devlntro_api/
 ├── package-lock.json
 ├── package.json
 └── README.md
+
 ```
-- `src`: 메인 소스 코드 디렉토리
-- `auth`: 인증 관련 모듈, 컨트롤러, 서비스
-- `users`: 사용자 관리 관련 모듈, 컨트롤러, 서비스, DTO
-- `posts`: 게시물 관리 관련 모듈, 컨트롤러, 서비스, DTO
-- `comments`: 댓글 관리 관련 모듈, 컨트롤러, 서비스, DTO
-- `contacts`: 인맥 관리 관련 모듈, 컨트롤러, 서비스, DTO
-- `feed`: 사용자 피드 관련 기능, 모듈, 서비스
-- `notifications`: 알림 관련 모듈, 컨트롤러, 서비스
-- `s3`: S3 관련 파일 업로드 모듈
-- `migrations`: 데이터베이스 마이그레이션 파일들
-- `seeds`: 데이터베이스 초기 데이터를 위한 시드 파일
-- `services`: 여러 기능에 대한 서비스 레이어 코드
-  - `feed-filter.service.ts`: 피드 필터링 로직을 처리하는 서비스
-  - `sorting-service.ts`: 정렬 로직을 처리하는 서비스
-- `database`: 데이터베이스 연결 설정 모듈
-- `common`: 공통으로 사용되는 필터, 파이프라인 등
-- `config`: 환경 설정 관련 파일
-- `controllers`: 기타 컨트롤러 코드 모음
-- `dto`: 공통 데이터 전송 객체 (DTO) 모음
-- `entities`: 데이터베이스 엔티티 정의
-  - `post.entity.ts`: 게시물 관련 엔티티 정의
-  - `comment.entity.ts`: 댓글 관련 엔티티 정의
-  - `user-account.entity.ts`: 사용자 계정 관련 엔티티 정의
-  - `notification.entity.ts`: 알림 관련 엔티티 정의
-- `main.ts`: 백엔드 애플리케이션의 진입점
-- `.env`: 환경 변수 파일
-- `.dockerignore`: Docker 관련 불필요 파일 제외
-- `Dockerfile`: Docker 설정 파일
-- `.eslintrc.js`: ESLint 설정 파일
-- `.prettierrc`: Prettier 설정 파일
-- `ormconfig.ts`: TypeORM 설정 파일
-- `package.json`: 프로젝트 의존성 및 스크립트 정의
-- `tsconfig.json`: TypeScript 설정 파일
-- `README.md`: 프로젝트 설명 문서
+
+
+
 
 
 </details>
 
 ## 📚Swagger UI
-![Swagger UI](./images/SwaggerUI.png)
+http://52.78.122.29:3000/api-docs
 
 ## 🗄️ERD 설계도
 ![ERD 설계도](./images/erd_diagram.png)
 
-## 📋API 명세서
+## 📋수동 API 명세서
 <details>
 <summary>API 명세서 펼치기/접기</summary>
 
