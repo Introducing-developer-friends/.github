@@ -57,7 +57,7 @@
 
 ### 김도연
 - 백엔드 개발 (NestJS, MySQL, TypeORM)
-- 인프라(AWS, Docker, Nginx, CloudFront)
+- 인프라(AWS, Docker, CloudFront, GitHub Actions)
 
 ## 📅개발 기간
 - **2024년 9월 15일 ~ 11월 15일 (56일)**
