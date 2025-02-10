@@ -290,7 +290,7 @@ dev-intro_api/
 </details>
 
 ## 📚Swagger UI
-http://52.78.122.29:3000/api-docs
+http://3.36.153.140:3000/api-docs
 
 ## 🗄️ERD 설계도
 ![ERD 설계도](./images/erd_diagram.png)
